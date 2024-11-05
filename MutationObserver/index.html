@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutation Observer</title>
+</head>
+
+<body>
+    <h1>Mutation Observer</h1>
+    <div  style="border:2px solid red;width:fit-content">
+        <h6 contenteditable="true" id="elem">This is div</h6>
+    </div>
+</body>
+<script>
+   let observer = new MutationObserver(mutationRecords => {
+  console.log(mutationRecords); // console.log(the changes)
+});
+
+// observe everything except attributes
+observer.observe(elem, {
+  childList: true, // observe direct children
+  subtree: true, // and lower descendants too
+  characterDataOldValue: true // pass old data to callback
+});
+</script>
+</script>
+
+</html>
