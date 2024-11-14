@@ -2,29 +2,38 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutation Observer</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutation Observer</title>
 </head>
 
 <body>
-    <h1>Mutation Observer</h1>
-    <div  style="border:2px solid red;width:fit-content">
-        <h6 contenteditable="true" id="elem">This is div</h6>
-    </div>
+  <h1>Mutation Observer</h1>
+  <p>Check for the new appended nodes</p>
+  <button class="btn">Add Div</button>
+  <div class="main-div">
+    <h6 style="border:2px solid red;width:fit-content" contenteditable="true" id="elem">This is a div</h6>
+  </div>
 </body>
 <script>
-   let observer = new MutationObserver(mutationRecords => {
-  console.log(mutationRecords); // console.log(the changes)
-});
+  let element = document.querySelector('.main-div');
+  const btn = document.querySelector('.btn');
+  btn.addEventListener('click',()=>{
+    element.innerHTML += `<h6 style="border:2px solid red;width:fit-content" contenteditable="true" id="elem">This is a div</h6>`
+  })
+  
+  const options = {
+    childList: true, // listen to listen to children being added or removed
+    attributes: true, // listen to attributes changes
+    subtree: true // omit or set to false to observe only changes to the parent node
+  }
+  let observer = new MutationObserver(mutationRecords => {
+    console.log("Something has changed in the document",mutationRecords); // console.log(the changes)
+  });
 
-// observe everything except attributes
-observer.observe(elem, {
-  childList: true, // observe direct children
-  subtree: true, // and lower descendants too
-  characterDataOldValue: true // pass old data to callback
-});
+  // observe everything except attributes
+  observer.observe(element,options);
 </script>
 </script>
 
