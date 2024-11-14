@@ -19,3 +19,8 @@ const observer = new IntersectionObserver((entries)=>{
 },options)
 
 observer.observe(Green_Elem)
+
+ // PRACTICAL USE  :
+//  Efficient Image Loading Consider a long-scrolling image gallery. 
+//  Loading every image at once hampers performance. Intersection Observer to the rescue! 
+//  It loads images as they enter the view, conserving bandwidth and enhancing page load speeds.

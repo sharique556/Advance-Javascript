@@ -6,9 +6,9 @@ function fibonacci(n) {
     return fibonacci(n - 2) + fibonacci(n - 1);
 }
 
-console.log(fibonacci(10))
+console.log(fibonacci(15    ))
 
-// so if we're makeing the recursive tree for the above function
+// so if we're making the recursive tree for the above function
 // then we see that some of the function calls gets repeated
 // so can we not save the values of those function calls 
 // in any array,so if we need it in future we will
@@ -24,3 +24,6 @@ function optimalFibonacci(n, cacheArr = new Array(n).fill(null)) {
 }
 
 console.log(optimalFibonacci(15))
+
+
+
