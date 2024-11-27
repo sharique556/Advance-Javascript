@@ -1,0 +1,9 @@
+.accordion-content{
+    display: none;
+}
+
+.active{
+    display: block;
+    border:1.5px solid teal;
+    background-color: rgba(205, 199, 233, 0.856);
+}

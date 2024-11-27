@@ -9,12 +9,11 @@ const options = {
 
 const observer = new IntersectionObserver((entries)=>{
     const [entry] = entries;
-    console.log("coming")
     if(entry.isIntersecting){
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        console.log("In a green block viewport")
-    }else{
-        console.log("Still not in green viewport")
+        // window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });  // Automatic scrolling to top
+        alert("In a green block viewport")
+        confirm("Click OK if you looking at green panel");
+        prompt("Say Hi to green display", "");
     }
 },options)
 

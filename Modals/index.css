@@ -1,0 +1,25 @@
+.open_btn,
+.text {
+    filter: blur(0);
+}
+
+.modal-main-div{
+    display: flex;
+    justify-content: center;
+    position:absolute;  /* Here position absolute meaning it will get positioned as per its closest parent which is 'body' here */
+    bottom: 6rem;
+}
+.modal {
+    display: none;
+    width: 80%;
+    height: 350px;
+}
+
+.modal-content {
+    border: 2px solid orange;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    height: 200px;
+}
