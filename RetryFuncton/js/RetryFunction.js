@@ -1,3 +1,5 @@
+// Source Article : https://hackernoon.com/how-to-improve-your-backend-by-adding-retries-to-your-api-calls-83r3udx
+
 const URL = "https://status-codes.glitch.me/status/400"
 
 // This function is implemeting retry mechanism of api calls, 
@@ -13,8 +15,6 @@ function fetchRetry(url, options = {}, retries = 3) {
     })
         .catch(e => console.log(e))
 }
-
-// fetchRetry(URL)
 
 // Above method needs one more improvement
 // The subsequent retry calls are very immediate
